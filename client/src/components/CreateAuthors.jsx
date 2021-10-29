@@ -9,10 +9,7 @@ const CreateAuthors = () =>{
     const SignupSchema = Yup.object().shape({
         name: Yup.string()
         .min(3, 'El nombre no puede tener menos de 3 caracteres')
-        .required('Debe ingresar un nombre'),
-        quotes: Yup.string()
-        .min(3, 'Debe ingresar una cita')
-        .required('Debe escribir una cita del autor')
+        .required('Debe ingresar un nombre')
     });
     const create = async (values) => {
         try{
@@ -35,15 +32,13 @@ const CreateAuthors = () =>{
             })
         }
     }
-
     return(
     <>
         <h1>Autores</h1>
         <div className={styles.card}>
         <Formik
     initialValues={{
-        name: '',
-        quotes: ''
+        name: ''
     }}
     validationSchema={SignupSchema}
     onSubmit={create}
@@ -54,11 +49,6 @@ const CreateAuthors = () =>{
         <Field name="name" />
         {<errors className="name"></errors> && touched.name ? (
             <div className={styles.errors}>{errors.name}</div>
-        ) : null}
-        <label className="color-letters" htmlFor="quotes">Quotes:</label>
-        <Field name="quotes" />
-        {errors.quotes && touched.quotes ? (
-            <div className={styles.errors}>{errors.quotes}</div>
         ) : null}
         <button type="submit">Crear</button>
         </Form>

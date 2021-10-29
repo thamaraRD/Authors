@@ -5,11 +5,6 @@ const AuthorsSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Debe ingresar un nombre'],
         minlength: [3, 'El nombre no puede tener menos de 3 caracteres']
-    },
-    quotes: {
-        type: String,
-        required: [true, 'Debe ingresar una frase'],
-        minlength: [3, 'La frase no puede tener menos de 3 caracteres']
     }
     }, {timestamps: true});
 

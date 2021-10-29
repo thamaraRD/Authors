@@ -27,13 +27,13 @@ module.exports.getOneAuthor = async (req, res) => {
     return res.status(500).json({ error: err });
   }
 };
-module.exports.deletedAuthor = async (req, res) => {
+module.exports.deleteAuthor = async (req, res) => {
   try {
     const { id } = req.params;
-    const deleteAuthor = await Author.deleteOne({ _id: id });
+    const deletedAuthor = await Author.deleteOne({ _id: id });
     return res.json({
-      message: "Se ha borrado producto exitosamente",
-      author: deleteAuthor,
+      message: "Se ha borrado autor exitosamente",
+      author: deletedAuthor,
     });
   } catch (error) {
     return res.status(500).json({ error: err });

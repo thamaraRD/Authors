@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const port = 8000;
 const authorsRoutes = require("./server/routes/author.routes");
-require("./server/config/mongoose.config");
+require("./server/config/moongose.config");
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

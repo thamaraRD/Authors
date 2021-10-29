@@ -5,6 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import CreateAuthors from './components/CreateAuthors';
+import AuthorList from './components/AuthorsList';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Switch>
         <Route exact path="/create">
         <CreateAuthors/>
+        </Route>
+        <Route exact path="/authors">
+        <AuthorList/>
         </Route>
         </Switch>
       </Router>
